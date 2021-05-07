@@ -11,4 +11,4 @@ Time complexity can be briefly defined as the rate of growth of `cpu` time requi
 ### Space Complexity
 Space complexity can be briefly defined as the rate of growth of `memory` required by an algorithm with respect to it's input.
 
-For now, this section of the repository focuses on space complexity.
+For now, this section of the repository focuses on time complexity.
