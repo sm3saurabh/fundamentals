@@ -8,6 +8,20 @@ Sequential elements are linked to each other using `pointers`.
 ### Representation of a linked list
 A linked list can be visualized as a chain of elements called `nodes`. Each `node` contains two fields -- data and a next pointer.
 
+A linked list is represented by the first node of the chain called the `head`. If the linked list is empty, head would be equal to a nullptr (c++) 
+
+A node in a linked list can be created using a simple class with the following defintion.
+
+```cpp
+class Node {
+  public:
+    int data;
+    Node* next;
+}
+```
+
+For brevity, our node can only store int data. But you can very well extend this node to be used with a generic template
+
 
 ### Advantages of linked list w.r.t arrays
 * Dynamic size -> Size of an array is fixed, which means that it is necessary for you to know about the required size when declaring it (although an ArrayList mitigates this limitation of an array).
@@ -15,3 +29,4 @@ A linked list can be visualized as a chain of elements called `nodes`. Each `nod
 
 ### Drawbacks of linked list w.r.t arrays
 * Random access of elements is not possible. Elements must be accessed sequentially starting from the `head` node
+* Each element requires extra storage for the next pointer.
