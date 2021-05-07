@@ -1,2 +1,7 @@
 # fundamentals
-I use this repository to compile a list of learning resources for my reference in the future
+Programming fundamentals that are essential.
+
+The repo currently has 
+* [Runtime Analysis](/runtime-analysis)
+* [Data Structures](/data-structures)
+
