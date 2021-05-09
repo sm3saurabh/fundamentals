@@ -41,5 +41,22 @@ void deleteNode(Node** head, int key) {
 }
 
 int main() {
+  Node* head = nullptr;
+
+  push(&head, 5);
+  push(&head, 4);
+  push(&head, 3);
+  push(&head, 2);
+  push(&head, 1);
+
+  cout << endl << "List before deletion" << endl;
+
+  printList(head);
+
+  deleteNode(&head, 3);
+
+  cout << endl << "List after deletion" << endl;
+  printList(head);
+
   return 0;
 }
