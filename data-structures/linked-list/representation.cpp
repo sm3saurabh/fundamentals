@@ -1,12 +1,7 @@
 #include <iostream>
+#include "node.h"
 
 using namespace std;
-
-class Node {
- public:
-  int data;
-  Node* next;
-};
 
 void printList(Node* head) {
   while (head) {
@@ -21,17 +16,15 @@ int main() {
   Node* third = nullptr;
 
   // allocate 3 nodes in the heap
-  head = new Node();
-  second = new Node();
-  third = new Node();
+  head = new Node(1);
+  second = new Node(2);
+  third = new Node(3);
 
-  head->data = 1;       // assign data in first node
   head->next = second;  // Link first node with second
 
-  second->data = 2;  // assign data to second node
+
   second->next = third;
 
-  third->data = 3;  // assign data to third node
   third->next = nullptr;
 
   printList(head);
