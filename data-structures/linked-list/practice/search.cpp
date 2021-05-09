@@ -52,6 +52,6 @@ int main() {
   cout << "List contains recursive 4" << searchRecursive(head, 4) << endl;
 
   cout << "List contains 42 " << search(head, 42) << endl;
-  cout << "List contains recursive 42" << searchRecursive(head, 42) << endl;
+  cout << "List contains recursive 42 " << searchRecursive(head, 42) << endl;
   return 0;
 }
