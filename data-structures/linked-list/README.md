@@ -20,7 +20,7 @@ class Node {
 }
 ```
 
-For brevity, our node can only store int data. But you can very well extend this node to be used with a generic template
+For brevity, our node can only store int data. But you can very well extend this node to be used with a generic template.
 
 
 ### Advantages of linked list w.r.t arrays
@@ -30,3 +30,7 @@ For brevity, our node can only store int data. But you can very well extend this
 ### Drawbacks of linked list w.r.t arrays
 * Random access of elements is not possible. Elements must be accessed sequentially starting from the `head` node
 * Each element requires extra storage for the next pointer.
+
+To see how different basic concepts play out in linked list, head over to the [practice](practice/) section.
+
+To see how different problems are solved using linked list, head over to the [problems](problems/) section.
