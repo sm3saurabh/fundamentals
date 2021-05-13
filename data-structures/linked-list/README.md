@@ -34,3 +34,5 @@ For brevity, our node can only store int data. But you can very well extend this
 To see how different basic concepts play out in linked list, head over to the [practice](practice/) section.
 
 To see how different problems are solved using linked list, head over to the [problems](problems/) section.
+
+Find the generic [Linked List](linked-list.h) file.
