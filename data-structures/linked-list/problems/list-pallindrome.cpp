@@ -19,5 +19,14 @@ void push(Node<int>** head, int key) {
 
 
 
+int main() {
+
+	testPositivePallindrome();
+
+	testNegativePallindrome();
+
+	return 0;
+}
+
 
 
