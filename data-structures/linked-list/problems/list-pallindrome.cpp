@@ -42,6 +42,7 @@ bool isListPallindrome(Node<int>* head) {
 }
 
 void testPositivePallindrome() {
+	cout << endl << "Testing pallindrome " << endl;
 	Node<int>* head = nullptr;
 
 	push(&head, 1);
@@ -58,10 +59,13 @@ void testPositivePallindrome() {
 		pal = "false";
 	}
 
-	cout << "Is the list pallindrome " << pal << endl;
+	cout << "Is the list pallindrome -> " << pal << endl;
 }
 
 void testNegativePallindrome() {
+
+ cout << endl << "Testing no pallindrome " << endl;
+
 	Node<int>* head = nullptr;
 
 	push(&head, 1);
@@ -71,6 +75,8 @@ void testNegativePallindrome() {
 	push(&head, 3);
 	push(&head, 28);
 
+	printList(head)
+
 	string pal;
 
 	if (isListPallindrome(head)) {
@@ -79,7 +85,7 @@ void testNegativePallindrome() {
 		pal = "false";
 	}
 
-	cout << "Is the list pallindrome " << pal << endl;
+	cout << "Is the list pallindrome -> " << pal << endl;
 }
 
 
