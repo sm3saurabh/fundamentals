@@ -16,3 +16,30 @@ void push(Node<int>** head, int key) {
   *head = temp;
 }
 
+
+int main() {
+	Node<int>* head = nullptr;
+
+	cout << endl << "Testing remove duplicates" << endl;
+
+	push(&head, 67);
+	push(&head, 67);
+	push(&head, 60);
+	push(&head, 43);
+	push(&head, 43);
+	push(&head, 21);
+	push(&head, 11);
+	push(&head, 11);
+	push(&head, 11);
+
+	printList(head);
+
+	cout << endl;
+
+	removeDuplicates(head);
+
+	cout << "Remove duplicates has been called" << endl;
+
+	printList(head);
+}
+
