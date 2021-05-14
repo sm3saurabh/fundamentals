@@ -17,7 +17,29 @@ void push(Node<int>** head, int key) {
   *head = temp;
 }
 
+bool isListPallindrome(Node<int>* head) {
+	stack<int> st;
 
+	auto temp = head;
+
+	while (temp) {
+		st.push(temp->data);
+		temp = temp->next;
+	}
+
+	temp = head;
+
+	while (temp) {
+		int data = st.top();
+		if (temp->data != data) {
+			return false;
+		}
+		temp = temp->next;
+		st.pop();
+	}
+
+	return true;
+}
 
 void testPositivePallindrome() {
 	Node<int>* head = nullptr;
