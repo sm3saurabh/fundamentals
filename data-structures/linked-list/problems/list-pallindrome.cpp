@@ -51,6 +51,8 @@ void testPositivePallindrome() {
 	push(&head, 2);
 	push(&head, 1);
 
+	printList(head);
+
 	string pal;
 
 	if (isListPallindrome(head)) {
@@ -75,7 +77,7 @@ void testNegativePallindrome() {
 	push(&head, 3);
 	push(&head, 28);
 
-	printList(head)
+	printList(head);
 
 	string pal;
 
