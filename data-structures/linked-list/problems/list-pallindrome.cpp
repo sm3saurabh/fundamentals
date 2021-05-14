@@ -56,9 +56,9 @@ void testPositivePallindrome() {
 	string pal;
 
 	if (isListPallindrome(head)) {
-		pal = "true";
+		pal = "yes";
 	} else {
-		pal = "false";
+		pal = "no";
 	}
 
 	cout << "Is the list pallindrome -> " << pal << endl;
@@ -82,9 +82,9 @@ void testNegativePallindrome() {
 	string pal;
 
 	if (isListPallindrome(head)) {
-		pal = "true";
+		pal = "yes";
 	} else {
-		pal = "false";
+		pal = "no";
 	}
 
 	cout << "Is the list pallindrome -> " << pal << endl;
