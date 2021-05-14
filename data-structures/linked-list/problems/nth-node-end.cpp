@@ -17,37 +17,110 @@ void push(Node<int>** head, int key) {
   *head = temp;
 }
 
-Node<int>* getNthNodeFromEnd(Node<int>* head, int n) {
+int size(Node<int>* head) {
+  int count = 0;
 
+  auto temp = head;
+
+  while (temp) {
+    count++;
+    temp = temp->next;
+  }
+
+  return count;
+}
+
+Node<int>* getNthNodeFromEnd(Node<int>* head, int n) {
+  int len = size(head);
+
+  if (n > len) {
+    return nullptr;
+  }
+
+  int k = len - n;
+
+  for (int i = 0; i < k; i++) {
+    head = head->next;
+  }
+
+  return head;
+}
+
+Node<int>* getNthNodeFromEndTwoPointers(Node<int>* head, int n) {
+  auto first = head;
+  auto second = head;
+
+  for (int i = 0; i < n; i++) {
+    first = first->next;
+
+    if (!first) {
+      return nullptr;
+    }
+  }
+
+  while (first) {
+    first = first->next;
+    second = second->next;
+  }
+
+  return second;
+}
+
+void testNormalApproach(Node<int>* head) {
+	cout << endl << "Testing normal approach" << endl;
+
+  auto thirdNode = getNthNodeFromEnd(head, 3);
+
+  if (thirdNode) {
+    cout << "Third node from the end is " << thirdNode->data << endl;
+  } else {
+    cout << "Eighth node from the end could not be found" << endl;
+  }
+
+  auto eigthNode = getNthNodeFromEnd(head, 8);
+
+  if (eigthNode) {
+    cout << "Eighth node from the end is " << eigthNode->data << endl;
+  } else {
+    cout << "Requested node could not be sent" << endl;
+  }
+}
+
+void testTwoPointerApproach(Node<int>* head) {
+	cout << endl << "Testing two pointer approach" << endl;
+
+	auto thirdNode = getNthNodeFromEndTwoPointers(head, 3);
+
+  if (thirdNode) {
+    cout << "Third node from the end is " << thirdNode->data << endl;
+  } else {
+    cout << "Eighth node from the end could not be found" << endl;
+  }
+
+  auto eigthNode = getNthNodeFromEndTwoPointers(head, 8);
+
+  if (eigthNode) {
+    cout << "Eighth node from the end is " << eigthNode->data << endl;
+  } else {
+    cout << "Requested node could not be sent" << endl;
+  }
 }
 
 int main() {
-	Node<int>* head = nullptr;
+  Node<int>* head = nullptr;
 
-	push(&head, 1);
-	push(&head, 2);
-	push(&head, 3);
-	push(&head, 4);
-	push(&head, 5);
-	push(&head, 6);
+  push(&head, 1);
+  push(&head, 2);
+  push(&head, 3);
+  push(&head, 4);
+  push(&head, 5);
+  push(&head, 6);
 
-	printList(head);
+  printList(head);
 
-	auto thirdNode = getNthNodeFromEnd(head, 3);
+  testNormalApproach(head);
 
-	if (thirdNode) {
-		cout << "Third node from the end is " << thirdNode->data << endl;
-	} else {
-		cout << "Eighth node from the end could not be found" << endl;
-	}
+  testTwoPointerApproach(head);
 
-	auto eigthNode = getNthNodeFromEnd(head, 8);
-
-	if (eigthNode) {
-		cout << "Eighth node from the end is " << thirdNode->data << endl;
-	} else {
-		cout << "Requested node could not be sent" << endl;
-	}
-
-	return 0;
+  return 0;
 }
