@@ -17,19 +17,18 @@ void push(Node<int>** head, int key) {
 }
 
 void removeDuplicates(Node<int>* head) {
-	Node<int>* next = nullptr;
 	auto current = head;
 
 	while (current && current->next) {
 		
 		if (current->data == current->next->data) {
-			next = current->next->next;
+			auto next = current->next->next;
 			delete current->next;
+			current->next = next;
 		} else {
-			next = current->next;
+			current = current->next;
 		}
 
-		current = next;
 	}
 }
 
