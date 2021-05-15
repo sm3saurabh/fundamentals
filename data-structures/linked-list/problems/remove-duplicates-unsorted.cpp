@@ -18,10 +18,10 @@ void push(Node<int>** head, int key) {
 }
 
 void removeDuplicatesUnsorted(Node<int>* head) {
-  Node<int>* outer = head;
+  auto outer = head;
 
 	while (outer != nullptr) {
-		Node<int>* current = head;
+		auto current = head;
 		Node<int>* prev = nullptr;
 
 		while (current != nullptr) {
@@ -32,7 +32,7 @@ void removeDuplicatesUnsorted(Node<int>* head) {
 			}
 
 			if (current->data == outer->data) {
-				Node<int>* next = current->next;
+				auto next = current->next;
 
 				delete current;
 
@@ -48,6 +48,10 @@ void removeDuplicatesUnsorted(Node<int>* head) {
 		outer = outer->next;
  	} 
   
+}
+
+void removeDuplicatesUnsortedHashing(Node<int>* head) {
+
 }
 
 int main() {
