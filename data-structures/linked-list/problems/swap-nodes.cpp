@@ -31,10 +31,51 @@ void deleteWhole(Node<int>** head) {
 }
 
 void swapNodes(Node<int>** head, int a, int b) {
+	if (a == b) {
+		return;
+	}
 
+	Node<int>* currA = *head;
+	Node<int>* currB = *head;
+	Node<int>* prevA = nullptr;
+	Node<int>* prevB = nullptr;
+
+	while (currA && currA->data != a) {
+		prevA = currA;
+		currA = currA->next;
+	}
+
+	if (!currA) {
+		return;
+	}
+
+	while (currB && currB->data != b) {
+		prevB = currB;
+		currB = currB->next;
+	}
+
+	if (!currB) {
+		return;
+	}
+
+	if (!prevA) {
+		*head = currB;
+	} else {
+		prevA->next = currB;
+	}
+
+	if (!prevB) {
+		*head = currA;
+	} else {
+		prevB->next = currA;
+	}
+
+	auto temp = currA->next;
+	currA->next = currB->next;
+	currB->next = temp;
 }
 
-Node<int>** createTestList() {
+Node<int>* createTestList() {
 	Node<int>* head = nullptr;
 
 	push(&head, 12);
@@ -44,19 +85,19 @@ Node<int>** createTestList() {
 	push(&head, 45);
 	push(&head, 13);
 
-	return &head;
+	return head;
 }
 
 void testNormalSwapping() {
 	auto head = createTestList();
 
 	cout << "Before swapping" << endl;
-	printList(*head);
+	printList(head);
 
 	cout << "After swapping 2 and 69" << endl;
-	swapNodes(head, 2, 69);
-	printList(*head);
-	deleteWhole(head);
+	swapNodes(&head, 2, 69);
+	printList(head);
+	deleteWhole(&head);
 }
 
 
@@ -64,48 +105,48 @@ void testAAtHead() {
 	auto head = createTestList();
 
 	cout << "Before swapping" << endl;
-	printList(*head);
+	printList(head);
 
 	cout << "After swapping 13 and 23" << endl;
-	swapNodes(head, 13, 23);
-	printList(*head);
-	deleteWhole(head);
+	swapNodes(&head, 13, 23);
+	printList(head);
+	deleteWhole(&head);
 }
 
 void testBAtHead() {
 	auto head = createTestList();
 
 	cout << "Before swapping" << endl;
-	printList(*head);
+	printList(head);
 
 	cout << "After swapping 69 and 13" << endl;
-	swapNodes(head, 69, 13);
-	printList(*head);
-	deleteWhole(head);
+	swapNodes(&head, 69, 13);
+	printList(head);
+	deleteWhole(&head);
 }
 
 void testAAtTail() {
 	auto head = createTestList();
 
 	cout << "Before swapping" << endl;
-	printList(*head);
+	printList(head);
 
 	cout << "After swapping 12 and 69" << endl;
-	swapNodes(head, 12,69);
-	printList(*head);
-	deleteWhole(head);
+	swapNodes(&head, 12,69);
+	printList(head);
+	deleteWhole(&head);
 }
 
 void testBAtTail() {
 	auto head = createTestList();
 
 	cout << "Before swapping" << endl;
-	printList(*head);
+	printList(head);
 
 	cout << "After swapping 45 and 12" << endl;
-	swapNodes(head, 45, 12);
-	printList(*head);
-	deleteWhole(head);
+	swapNodes(&head, 45, 12);
+	printList(head);
+	deleteWhole(&head);
 }
 
 int main() {
