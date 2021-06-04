@@ -31,11 +31,23 @@ void deleteWhole(Node<int>** head) {
 }
 
 void swapNodes(Node<int>* head) {
-	
+	auto temp = head;
+
+	while (temp && temp->next) {
+		int n = temp->data;
+		temp->data = temp->next->data;
+		temp->next->data = n;
+		temp = temp->next->next;
+	}	
 }
 
 void swapNodesRecursively(Node<int>* head) {
-
+	if (head && head->next) {
+		int n = head->data;
+		head->data = head->next->data;
+		head->next->data = n;
+		swapNodesRecursively(head->next->next);
+	}
 }
 
 Node<int>* createTestList() {
@@ -63,7 +75,20 @@ void testNormalSwapping() {
 	deleteWhole(&head);
 }
 
+void testRecursiveSwapping() {
+	auto head = createTestList();
+
+	cout << "Before recursive pairwise swapping" << endl;
+	printList(head);
+
+	cout << "After recursive pairwise swapping" << endl;
+	swapNodesRecursively(head);
+	printList(head);
+	deleteWhole(&head);
+}
+
 int main() {
 	testNormalSwapping();
+	testRecursiveSwapping();
 }
 
