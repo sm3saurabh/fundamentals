@@ -2,6 +2,9 @@
 
 using namespace std;
 
+
+// Time complexity - O(2^n)
+// Space complexity - O(n)
 long long fib(int n) {
   if (n <= 2) {
     return 1;
@@ -11,7 +14,13 @@ long long fib(int n) {
 }
 
 int main() {
-  auto result = fib(50);
+
+  cout << fib(2) << endl;
+  cout << fib(6) << endl;
+
+  cout << fib(18) << endl;
+
+  cout << fib(50) << endl;
 
   return 0;
 }
